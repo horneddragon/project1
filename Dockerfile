@@ -9,10 +9,10 @@ RUN apt-get update && apt-get install -y gcc default-libmysqlclient-dev pkg-conf
     rm -rf /var/lib/apt/lists/*
 
 # Copy the requirements file to leverage Docker cache
-COPY requirements.txt .
+COPY requirement.txt .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirement.txt
 
 # Copy the rest of the application code
 COPY . .
